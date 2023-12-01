@@ -120,7 +120,7 @@ impl EventHandler for Handler {
                 println!("Error when direct messaging user: {why:?}");
             }
         }
-        if msg.content.starts_with("&") && msg.channel_id == ChannelId::new(1173231671718449265_u64) {
+        if msg.content.starts_with("&") && msg.channel_id == ChannelId::new(1173075205267148861_u64) {
             // // remove the & symbol from the message without splitting it
             // let mut xs: Vec<&str> = msg.content.split_whitespace().collect();
             // if xs.len() < 2 {
