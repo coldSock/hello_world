@@ -128,14 +128,15 @@ impl EventHandler for Handler {
             // }
             // let index = xs.iter().position(|x| *x == "&").unwrap();
             // xs.remove(index);
+
+
             let xs: String = msg.content.replace("&", "");
 
         
 
             // let reaction = msg.react(&context, '✅').await;
-            let reaction = ReactionType::Custom { animated: (false), id: 1107789494511468604.into(), name: Some("tup".to_string()) };
 
-            let reaction = vec![reaction];
+
 
             let author = CreateEmbedAuthor::new(&msg.author.name).name(&msg.author.nick_in(&context, &msg.guild_id.unwrap()).await.unwrap()).icon_url(&msg.author.face());
 
@@ -149,10 +150,9 @@ impl EventHandler for Handler {
 
 
             let message = CreateMessage::new()
-                .embed(embed)
-                .reactions(reaction);
+                .embed(embed);
 
-            let message = ChannelId::new(1173231671718449265).send_message(&context, message).await;
+            let message = ChannelId::new(1173075205267148861).send_message(&context, message).await;
             if let Err(why) = message {
                 eprintln!("Error sending message: {why:?}");
             }
